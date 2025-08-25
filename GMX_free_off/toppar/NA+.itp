@@ -1,0 +1,7 @@
+[ moleculetype ]
+  ; molname       nrexcl
+  NA+             1
+
+[ atoms ]
+  ; id_    at type res nr  residue name     at name  cg nr  charge   mass
+    1       Na+      1          NA+         NA+       1      1     22.9898

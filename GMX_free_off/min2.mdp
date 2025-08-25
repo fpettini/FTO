@@ -1,0 +1,19 @@
+define                  = -DFLEXIBLE -DPOSRES -DPOSRES_FC_BB=1000 -DPOSRES_FC_SC=1000 -DPOSRES_FEHID=1000 -DPOSRES_FEASP=1000 -DPOSRES_FEION=1000 -DPOSRES_FEAKG=1000 -DPOSRES_FEDA6=1000
+integrator              = cg
+emtol                   = 10
+nsteps                  = 100000
+nstlist                 = 10
+cutoff-scheme           = Verlet
+vdwtype                 = Cut-off
+coulombtype             = PME
+rlist                   = 1.0
+rvdw                    = 1.0
+rcoulomb                = 1.0
+vdw-modifier            = Potential-shift
+DispCorr                = EnerPres
+;
+disre                   = Simple
+disre-weighting         = equal   
+disre-mixed             = no      
+nstdisreout             = 1000    
+disre-fc                = 1000 
