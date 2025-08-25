@@ -1,0 +1,21 @@
+; Include forcefield parameters
+#include "toppar/COMPLEX.itp"
+
+#ifdef POSRES
+#include "toppar/restraints.itp"
+#include "toppar/dist_rest_off.itp"
+#endif
+
+#include "toppar/NA+.itp"
+#include "toppar/CL-.itp"
+#include "toppar/WAT.itp"
+
+[ system ]
+ FTO_DA6_out
+
+[ molecules ]
+; Compound        nmols
+ COMPLEX          1     
+ NA+              174   
+ CL-              146   
+ WAT              39165 

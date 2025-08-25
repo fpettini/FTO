@@ -1,0 +1,42 @@
+define                  = -DPOSRES -DPOSRES_FC_BB=100 -DPOSRES_FC_SC=10 -DPOSRES_FEHID=100 -DPOSRES_FEASP=100 -DPOSRES_FEION=100 -DPOSRES_FEAKG=100 -DPOSRES_FEDA6=100
+integrator              = md
+dt                      = 0.001
+nsteps                  = 10000000
+nstxtcout               = 10000
+nstvout                 = 10000
+nstfout                 = 10000
+nstcalcenergy           = 100
+nstenergy               = 1000
+nstlog                  = 1000
+;
+cutoff-scheme           = Verlet
+nstlist                 = 100
+vdwtype                 = Cut-off
+DispCorr                = EnerPres
+vdw-modifier            = none
+rlist                   = 1.0
+rvdw                    = 1.0
+rcoulomb                = 1.0
+coulombtype             = PME
+;
+tcoupl                  = v-rescale
+tc_grps                 = Protein_FE2_AKG_DNA Na+_Cl-_Water
+tau_t                   = 1.0 1.0
+ref_t                   = 303.15 303.15
+;
+pcoupl                  = C-rescale
+pcoupltype              = isotropic
+tau-p                   = 2.0
+compressibility         = 4.5e-5
+refcoord-scaling        = com
+ref-p                   = 1.0
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+continuation            = yes
+;
+disre                   = Simple
+disre-weighting         = equal
+disre-mixed             = no
+nstdisreout             = 1000
+disre-fc                = 1000

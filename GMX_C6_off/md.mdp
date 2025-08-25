@@ -1,0 +1,32 @@
+integrator              = md
+dt                      = 0.002
+nsteps                  = 1000000000
+; Output control
+nstenergy               = 50000      ; save energies every 100.0 ps
+nstlog                  = 50000      ; update log file every 100.0 ps
+nstxout-compressed      = 50000      ; save compressed coordinates every 100.0 ps
+;
+cutoff-scheme           = Verlet
+nstlist                 = 100
+vdwtype                 = Cut-off
+DispCorr                = EnerPres
+vdw-modifier            = none
+rlist                   = 1.0
+rvdw                    = 1.0
+rcoulomb                = 1.0
+coulombtype             = PME
+;
+tcoupl                  = v-rescale
+tc_grps                 = Protein_FE2_AKG_DNA Na+_Cl-_Water
+tau_t                   = 1.0 1.0
+ref_t                   = 303.15 303.15
+;
+pcoupl                  = C-rescale
+pcoupltype              = isotropic
+tau-p                   = 2.0
+compressibility         = 4.5e-5
+ref-p                   = 1.0
+;
+; Velocity generation
+continuation            = yes       ; continuing from NPT 
+;
